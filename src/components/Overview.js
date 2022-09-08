@@ -14,8 +14,11 @@ export default function Overview(props) {
       <div className="title">
         {edit ? (
           <div className="editor">
-            <input value={props.title} />
-            <button>✓</button>
+            <input
+              value={props.title}
+              onChange={(event) => props.editNote(event, props.number)}
+            />
+            <button onClick={toggleEdit}>✓</button>
           </div>
         ) : (
           <h1 onClick={toggleEdit}>{props.title}</h1>

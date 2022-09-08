@@ -26,6 +26,20 @@ function App() {
     );
   }
 
+  function editNote(event, id) {
+    const value = event.target.value;
+    setItemsArray((prevArray) =>
+      prevArray.map((item) => {
+        if (prevArray.indexOf(item) === id) {
+          return value;
+        } else {
+          return item;
+        }
+      })
+    );
+    console.log(id);
+  }
+
   const items = itemsArray.map((item, index) => {
     return (
       <Overview
@@ -33,6 +47,7 @@ function App() {
         number={index}
         key={index}
         deleteNote={deleteNote}
+        editNote={editNote}
       />
     );
   });
