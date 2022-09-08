@@ -12,8 +12,10 @@ function App() {
   }
 
   function submitNote() {
-    setItemsArray((prevArray) => [...prevArray, inputValue]);
-    setInputValue("");
+    if (inputValue) {
+      setItemsArray((prevArray) => [...prevArray, inputValue]);
+      setInputValue("");
+    }
   }
 
   function deleteNote(id) {
