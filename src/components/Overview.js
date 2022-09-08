@@ -1,7 +1,13 @@
 export default function Overview(props) {
   return (
-    <h1>
-      {props.number} {props.title}
-    </h1>
+    <div className="item">
+      <div className="number">
+        <h1>{props.number}</h1>
+      </div>
+      <div className="title">
+        <h1>{props.title}</h1>
+      </div>
+      <button className="button">X</button>
+    </div>
   );
 }

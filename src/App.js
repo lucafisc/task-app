@@ -1,6 +1,7 @@
 import Overview from "./components/Overview";
 import React from "react";
 import { nanoid } from "nanoid";
+import "./style.css";
 
 function App() {
   const [itemsArray, setItemsArray] = React.useState([]);
@@ -20,11 +21,13 @@ function App() {
   });
 
   return (
-    <>
-      <input type="text" onChange={handleChange} value={inputValue} />
-      <button onClick={submitNote}>Submit</button>
-      {items}
-    </>
+    <div className="app">
+      <div className="input">
+        <input type="text" onChange={handleChange} value={inputValue} />
+        <button onClick={submitNote}>+</button>
+      </div>
+      <div className="list">{items}</div>
+    </div>
   );
 }
 
