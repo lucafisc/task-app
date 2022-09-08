@@ -66,6 +66,10 @@ button {
 
 }
 
+.input>input::placeholder {
+    color: var(--gray-background);
+}
+
 .input>button {
     margin-right: 5px;
     border-radius: 50%;

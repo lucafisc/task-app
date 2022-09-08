@@ -18,6 +18,12 @@ function App() {
     }
   }
 
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      submitNote();
+    }
+  }
+
   function deleteNote(id) {
     setItemsArray((prevArray) =>
       prevArray.filter((item) => {
@@ -55,7 +61,13 @@ function App() {
   return (
     <div className="app">
       <div className="input">
-        <input type="text" onChange={handleChange} value={inputValue} />
+        <input
+          placeholder="new task"
+          type="text"
+          onChange={handleChange}
+          value={inputValue}
+          onKeyPress={handleKeyPress}
+        />
         <button onClick={submitNote}>+</button>
       </div>
       <div className="list">{items}</div>
