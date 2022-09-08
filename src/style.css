@@ -29,6 +29,7 @@
     --pink: #fc00d8;
     --green: #69dd12;
     --input: #e6e4e2;
+    --blue: #223eff;
 }
 
 .app {
@@ -110,7 +111,9 @@ button {
     cursor: default;
 }
 
-.item:hover {
+.item:hover,
+.item:hover>.title>.editor>input,
+.item:hover>.title>.editor>button {
     background-color: var(--neon);
 }
 
@@ -139,12 +142,40 @@ button {
 
 
 .title {
+    flex: 1;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: text;
 }
 
-.title>h1 {
+.title>h1,
+.title>.editor>input {
     font-size: 40px;
+}
+
+.title>.editor>input {
+    color: var(--blue);
+    background-color: var(--gray-background);
+    border: none;
+    max-width: 200px;
+    outline: none;
+}
+
+.editor {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor>button {
+    border: none;
+    width: 50px;
+    cursor: pointer;
+    color: var(--blue);
+    font-size: 30px;
+}
+
+.editor>button:active {
+    transform: scale(0.95);
 }
 
 .button {
