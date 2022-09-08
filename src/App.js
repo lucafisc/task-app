@@ -1,5 +1,5 @@
 import Overview from "./components/Overview";
-import React from "react";
+import React, { useEffect } from "react";
 import { nanoid } from "nanoid";
 import "./style.css";
 
@@ -65,6 +65,7 @@ function App() {
 
   return (
     <div className="app">
+      <Title />
       <div className="input">
         <input
           placeholder="new task"
@@ -78,6 +79,14 @@ function App() {
       <div className="list">{items}</div>
     </div>
   );
+}
+
+function Title() {
+  useEffect(() => {
+    document.title = "tasks";
+  }, []);
+
+  return <></>;
 }
 
 export default App;
