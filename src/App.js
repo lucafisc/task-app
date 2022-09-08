@@ -16,8 +16,23 @@ function App() {
     setInputValue("");
   }
 
+  function deleteNote(id) {
+    setItemsArray((prevArray) =>
+      prevArray.filter((item) => {
+        return prevArray.indexOf(item) !== id;
+      })
+    );
+  }
+
   const items = itemsArray.map((item, index) => {
-    return <Overview title={item} number={index} key={nanoid()} />;
+    return (
+      <Overview
+        title={item}
+        number={index}
+        key={index}
+        deleteNote={deleteNote}
+      />
+    );
   });
 
   return (
