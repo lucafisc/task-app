@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Overview from "./components/Overview";
+import React from "react";
+import { nanoid } from "nanoid";
 
 function App() {
+  const [itemsArray, setItemsArray] = React.useState([]);
+  const [inputValue, setInputValue] = React.useState("");
+
+  function handleChange(event) {
+    setInputValue(event.target.value);
+  }
+
+  function submitNote() {
+    setItemsArray((prevArray) => [...prevArray, inputValue]);
+    setInputValue("");
+  }
+
+  const items = itemsArray.map((item) => {
+    return <Overview title={item} key={nanoid()} />;
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <input type="text" onChange={handleChange} value={inputValue} />
+      <button onClick={submitNote}>Submit</button>
+      {items}
+    </>
   );
 }
 
