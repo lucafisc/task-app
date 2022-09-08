@@ -15,8 +15,8 @@ function App() {
     setInputValue("");
   }
 
-  const items = itemsArray.map((item) => {
-    return <Overview title={item} key={nanoid()} />;
+  const items = itemsArray.map((item, index) => {
+    return <Overview title={item} number={index} key={nanoid()} />;
   });
 
   return (
