@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/task-app/static/css/main.70d3b091.css",
+    "main.js": "/task-app/static/js/main.35b29413.js",
+    "static/media/Karrik-Regular.ttf": "/task-app/static/media/Karrik-Regular.7f3178fd17d03fc98cfe.ttf",
+    "static/media/Karrik-Italic.ttf": "/task-app/static/media/Karrik-Italic.a2b2995362bead85b8c4.ttf",
+    "index.html": "/task-app/index.html",
+    "main.70d3b091.css.map": "/task-app/static/css/main.70d3b091.css.map",
+    "main.35b29413.js.map": "/task-app/static/js/main.35b29413.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70d3b091.css",
+    "static/js/main.35b29413.js"
+  ]
+}
