@@ -5,6 +5,11 @@ export default function Overview(props) {
   function toggleEdit() {
     setEdit((prevValue) => !prevValue);
   }
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      toggleEdit();
+    }
+  }
   return (
     <div className="item">
       <div className="number">
@@ -17,6 +22,7 @@ export default function Overview(props) {
             <input
               value={props.title}
               onChange={(event) => props.editNote(event, props.number)}
+              onKeyPress={handleKeyPress}
             />
             <button onClick={toggleEdit}>✓</button>
           </div>
