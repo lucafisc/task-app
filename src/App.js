@@ -4,7 +4,9 @@ import { nanoid } from "nanoid";
 import "./style.css";
 
 function App() {
-  const [itemsArray, setItemsArray] = React.useState([]);
+  const [itemsArray, setItemsArray] = React.useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
   const [inputValue, setInputValue] = React.useState("");
 
   function handleChange(event) {
@@ -43,8 +45,11 @@ function App() {
         }
       })
     );
-    console.log(id);
   }
+
+  React.useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(itemsArray));
+  }, [itemsArray]);
 
   const items = itemsArray.map((item, index) => {
     return (
